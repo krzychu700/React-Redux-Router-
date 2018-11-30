@@ -4,7 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-
 .adminPanel {
   background-color: black;
   padding: 10px;
@@ -21,10 +20,6 @@ body {
   border-bottom: 2px solid black;
   margin: 5px;
   padding: 5px;
-}
-
-.loginForm {
-  margin-top: 10px;
 }
 
 .goToAdmin {

@@ -1,22 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Order from './Order';
-import {configure, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import React from "react";
+import ReactDOM from "react-dom";
+import Order from "./Order";
 
-configure({adapter: new Adapter()});
+import { configure, shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
-describe('Order tests', () => {
-    it('Order ok', ()=>{
-        const div = document.createElement('div');
-        ReactDOM.render(<Order />, div);
-        ReactDOM.unmountComponentAtNode(div);
-    })
+configure({ adapter: new Adapter() });
 
-    it('hellow world render', () => {
-        const wrapper = shallow(<Order/>);
-        expect(wrapper.find('h1').text()).toBe('Order')
-    })
+describe("Order tests", () => {
+  it("Inventory renders without a problem", () => {
+    const div = document.createElement("div");
+    const order = [];
+    ReactDOM.render(<Order order={order} />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 
-})
-
+  it("Snapshot matches", () => {
+    const order = [];
+    const wrapper = shallow(<Order order={order} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});
